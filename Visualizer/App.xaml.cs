@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
 
@@ -13,7 +14,8 @@ namespace Visualizer
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddSingleton<MainWindow>();
-                })
+                    services.AddInfraServices();
+                })                            
                 .Build();
         }
 

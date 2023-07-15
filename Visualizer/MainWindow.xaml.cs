@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Domain.Interfaces;
+using System.Windows;
 
 namespace Visualizer
 {
@@ -7,14 +8,17 @@ namespace Visualizer
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private readonly IDataAccess _dataAccess;
+
+        public MainWindow(IDataAccess dataAccess)
         {
             InitializeComponent();
+            _dataAccess = dataAccess;
         }
 
         private void MainActionButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Hola Mundo");
+            MessageBox.Show(_dataAccess.GetData());
         }
     }
 }
