@@ -26,7 +26,7 @@ namespace Visualizer
 
         private void getData_click(object sender, RoutedEventArgs e)
         {
-            data.Text = _dataAccess.GetData();
+            normalData.Text = _dataAccess.GetData();
         }
 
         private void openChildForm_Click(object sender, RoutedEventArgs e)

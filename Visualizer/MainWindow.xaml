@@ -6,10 +6,22 @@
         xmlns:local="clr-namespace:Visualizer"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="500">
-    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextBlock x:Name="data"></TextBlock>
-        <Button x:Name="getData" Padding="20 10" Click="getData_click">Get Data</Button>
-        <Button x:Name="openChildForm" Padding="20 10" Click="openChildForm_Click">Open Child Form</Button>
-        <Button x:Name="openChildForm2" Padding="20 10" Click="openChildForm2_Click">Open Child Form 2</Button>
-    </StackPanel>
+    
+
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="factoryData" Grid.Column="0"></TextBlock>
+        <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
+            <Button x:Name="getData" Padding="20 10" Click="getData_click" Content="Get Data"/>
+            <Button x:Name="openChildForm" Padding="20 10" Click="openChildForm_Click" Content="Open Child Form"/>
+            <Button x:Name="openChildForm2" Padding="20 10" Click="openChildForm2_Click" Content="Open Child Form 2"/>
+        </StackPanel>
+        <TextBlock x:Name="normalData" Grid.Column="3"></TextBlock>
+    </Grid>
+            
 </Window>
