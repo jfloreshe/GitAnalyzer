@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
+using Visualizer.Helpers;
 
 namespace Visualizer
 {
@@ -14,7 +15,8 @@ namespace Visualizer
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddSingleton<MainWindow>();
-                    services.AddInfraServices();
+                    services.AddFormFactories();
+                    services.AddInfrastructureServices();
                 })                            
                 .Build();
         }
